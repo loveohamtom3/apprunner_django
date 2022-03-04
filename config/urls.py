@@ -19,7 +19,7 @@ from django.urls import path
 
 
 def sample_func(request):
-    return HttpResponse('Hello 野上純 from AWS App Runner!!')
+    return HttpResponse('Hello World from AWS App Runner!!')
 
 
 urlpatterns = [
