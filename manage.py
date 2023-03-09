@@ -8,10 +8,10 @@ def main():
     env = os.environ.get('ENV')
     if env == "PRODUCTION":
         os.environ.setdefault('DJANGO_SETTINGS_MODULE',
-                              'config.settings.production')
+                              'portfolio.settings.production')
     else:
         os.environ.setdefault('DJANGO_SETTINGS_MODULE',
-                              'config.settings.local')
+                              'portfolio.settings.local')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:

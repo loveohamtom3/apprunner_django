@@ -1,19 +1,8 @@
-
 import os
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-TEMPLATE_DIR = BASE_DIR / "templates"
-
-STATIC_DIR = BASE_DIR / "static"
-
-SECRET_KEY = 'django-insecure-^4lb^h#%w%j1-9wbh3n5i(e@j3o+v8@=*c%+v(bn!s#3n=dq(_'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['*']
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
 # Application definition
@@ -29,6 +18,7 @@ INSTALLED_APPS = [
     'django_bootstrap5',    
 ]
 
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -38,22 +28,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-        }
-    },
-    'loggers': {
-        'django.db.backends': {
-            'level': 'DEBUG',
-            'handlers': ['console'],
-        },
-    }
-}
 
 ROOT_URLCONF = 'portfolio.urls'
 
@@ -76,19 +50,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysql_testdb',
-        'USER': 'newuser',
-        'PASSWORD': 'newuser',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
-    }
-}
+
+
+
+# Password validation
+# https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -104,7 +70,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 LANGUAGE_CODE = 'ja'
 
@@ -130,4 +95,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_URL = 'myapp:login'
 LOGOUT_URL = 'myapp:logout'
 LOGIN_REDIRECT_URL = '/'
-
