@@ -4,8 +4,8 @@ services:
   web:
     build: 
       context: .
-      dockerfile: Dockerfile
-    command: docker compose up 0.0.0.0:4989
+      dockerfile: Dockerfile.local
+    command: python3 manage.py runserver 0.0.0.0:4989
     volumes:
       - .:/code
     ports:

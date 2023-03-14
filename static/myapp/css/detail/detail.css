@@ -6,21 +6,14 @@ html {
 html, body, div,
 span, h1, h2, h3, h4,
 h5, h6, p, a,
-address, em, img, dl,
-dt, dd, ol, ul, li,
-form, label, table,
-caption, tbody,
-tfoot, thead, tr, th,
-td {
+img, ul, li{
 	padding: 0;
 	margin: 0;
 	font-style: normal;
 	font-weight: normal;
 }
 h1, h2, h3, h4, h5,
-h6, p, li, dt, dd,
-th, td, caption,
-address {
+h6, p, li{
 	color: #35363F;
 }
 
@@ -29,11 +22,6 @@ li {
 }
 img, input, select {
 	vertical-align: middle;
-}
-
-table, th, td {
-	border-collapse: collapse;
-	border-spacing: 0;
 }
 
 a, img {
@@ -65,22 +53,6 @@ a:hover, a:active {
 	clear: both;
 }
 
-.fl {
-	float: left;
-}
-.fr {
-	float: right;
-}
-
-.fs12 {
-	font-size: 12px !important;
-}
-
-strong, .strong,
-.bold {
-	font-weight: bold;
-}
-
 .inner {
 	width: 1000px;
 	margin: 0 auto;
@@ -100,7 +72,6 @@ strong, .strong,
 }
 .navList > li {
 	display: table-cell;
-	position: relative;
 	background: #FFF;
 	border-top: 1px solid #E0E0E0;
 	border-left: 1px solid #E0E0E0;

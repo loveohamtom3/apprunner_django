@@ -23,34 +23,24 @@ div.mainContentsWrapSecond, div.typeSe div.mainContents div.mainContentsWrapSeco
   font-size: 15px;
   line-height: 1.1;
 }
-.photoListMask {
-  margin: 0 0 10px 20px;
-}
 
-.photoListMask .photoListWrap {
+.photoList .photoListWrap {
   display: flex;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  -ms-flex-pack: start;
-  justify-content: flex-start;
+  float: left;
   margin-left: -50px;
 }
-.photoListMask .photoListWrap .photoList {
-  position: relative;
+.photoList .photoListWrap .photo {
   height: 200px;
   width: 200px;
   overflow: hidden;
   cursor: pointer;
   margin: 0 0 20px 20px;
 }
-ol li, ul li {
-  list-style: none;
-}
-.photoListMask .photoListWrap .photoList > img {
-  position: absolute;
+
+.photoList .photoListWrap .photo > img {
   vertical-align: middle;
   object-fit: fill;
   object-position: 50% 50%;
   height: 200px;
-  width: 200px;
+  width: 200px;  
 }

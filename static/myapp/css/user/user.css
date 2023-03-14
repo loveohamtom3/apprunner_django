@@ -1,22 +1,40 @@
+@charset "UTF-8";
 
-a {
-  color: #06c;
-  text-decoration: none;
+body, div, p, ul, ol,
+li, dl, dt, dd,
+img,
+h1, h2, h3, h4, h5,
+h6, form, select {
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
 }
-ol, ul {
-  list-style: none;
-}
-li {
-  list-style: inherit;
-}
-div, p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+html {
+	overflow-y: scroll;
 }
 
 img {
-  vertical-align: bottom;
+	border: 0;
+	vertical-align: middle;
 }
+
+a{
+color: #393838;
+}
+
+a:link {
+	color: #1470CC;
+	text-decoration: none;
+  border:#0e0f0b;
+}
+
+.d{
+  font-size: 15px;
+}
+.bold, .strong {
+  font-weight: bold !important;
+}
+
 .headerWrap {
     margin: 0 0 30px;
     padding: 0;
@@ -33,8 +51,13 @@ img {
 }
 .headerCover {
   position: relative;
+  margin-left: -30px;
 }
-
+.coverImg {
+  width: 1020px;
+  height: 400px;
+  object-fit: cover; 
+}
 .headerCoverInfo {
   position: absolute;
   bottom: 15px;
@@ -155,49 +178,45 @@ img {
   font-size: 150%;
 }
 /* nav */
-.nav.nav--l .navList {
-  width: 100%;
-  height: 6.5rem;
-  margin-left: 200px;
-  margin-right: 230px;
-}
 .navList {
-  display: table;
+	display: table;
+	width: 1050px;
+  height: 50px;
+	table-layout: fixed;
+	z-index: 70;
+  margin-left: 170px;
+  text-decoration: underline;
 }
-ol, ul {
-  list-style: none;
+.navList > li {
+	display: table-cell;
+	position: relative;
+	background: #FFF;
+	border-top: 1px solid #E0E0E0;
+	border-left: 1px solid #E0E0E0;
+	border-bottom: 1px solid #E0E0E0;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 15px;
+	line-height: 1;
+	z-index: 50;
+	box-sizing: border-box;
 }
-.navItem {
-  display: table-cell;
-  position: relative;
-  height: 100%;
-  text-align: center;
-  vertical-align: middle;
+.navList > li a{
+	color: #4E4E4E;
+	font-weight: bold;
+	line-height: 1;
+	text-decoration: none;
 }
-.nav a.navTarget {
-  text-decoration: none;
-}
-.navTarget {
-  display: table;
-  width: 100%;
-  height: 100%;
-  padding: 10px; 
-  margin-bottom: 10px; 
-  border: 1px solid #333333;
-}
-.navMenuWrap {
-  display: table-cell;
-  vertical-align: middle;
+.navList > li > a:visited {
+	color: #4E4E4E;
 }
 
-.navMenu.navMenuTop {
-  font-size: 1.6rem;
+.navList > li > a {
+	display: block;
+	padding-top: 20px;
+	padding-bottom: 20px;
+  border-right: 1px solid #E0E0E0; 
 }
-.navMenu {
-  color: #797152;
-  font-weight: bold;
-  line-height: 1;
-}
-.userDetailInfo{
-  padding-left: 250px;
+.backTop{
+  padding-left: 100px;
 }

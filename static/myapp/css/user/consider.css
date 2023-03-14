@@ -1,75 +1,15 @@
-@charset "UTF-8";
-
-body, div, p, ul, ol,
-li, dl, dt, dd,
-img,
-h1, h2, h3, h4, h5,
-h6, form, select {
-	margin: 0px;
-	padding: 0px;
-	text-align: left;
-}
-html {
-	overflow-y: scroll;
-}
-
-img {
-	border: 0;
-	vertical-align: middle;
-}
-
-
-a{
-color: #393838;
-}
-
-a:link {
-	color: #1470CC;
-	text-decoration: none;
-  border: none;
-}
-
-main{
-  margin-left: 200px;
-  margin-right: 200px;
-  margin-top: 10px;
-}
-.d{
-  font-size: 15px;
-}
-.bold, .strong {
-  font-weight: bold !important;
-}
-
-.headerTitle{
-  border-bottom: 1px dotted #CCCCCC;
+.considerTitle{
 	padding-bottom: 5px;
-	font-size: 15px;
+  padding-left:200px;
+	font-size: 22px;
 	font-weight: bold;
 }
-.searchResult {
-  margin-top: 10px;
-}
-.searchResult > p {
-  font-size: 12px;
-}
-.resultNumber{
-  font-size: 10px !important;
-  margin-right: 10px !important;
-}
-.resultText{
-  font-size: 15px;
-  font-weight:bold;
-}
 
-.resultNumberText{
-  padding: 0 3px !important;
-  font-size: 18px;
-  color: #E73820 !important;
-}
 .shopDetailTop{
 	margin-top: 8px;
 	padding-top: 5px;
+  margin-left: 200px;
+  margin-right: 220px;
   border: double 5px #4ec4d3;
 }
 .shopDetailInner {
@@ -86,13 +26,17 @@ main{
 }
 
 .shopDetailFigure {
-	float: left;
-	width: 182px;
+	width: 300px;
+}
+.shopPhoto{
+  position: static;
+  float: left;
 }
 
 .shopDetailText {
-	padding-left: 80px;
+	padding-left: 50px;
 	overflow: auto;
+  margin: 12px;
 }
 .storeNamePrefix {
 	font-size: 12px;
@@ -132,6 +76,9 @@ main{
   margin-left: -33px;
   width:35px
 }
+.shopDetailInfoAccess{
+  margin-left: 32px;
+}
 .shopDetailInfoAccess >img{
   width: 30px;
 }
@@ -145,7 +92,7 @@ main{
 }
 .shopDetailAccess {
 	margin-top: 10px;
-  margin-left: -37px;
+  margin-left: -70px;
 
 }
 .shopDetailAccess > li {
@@ -157,8 +104,5 @@ main{
 }
 .backTop{
   margin-left: 500px;
-}
-.consideration{
-  font-size: 12px;
 }
 
