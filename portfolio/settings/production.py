@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-0=limiw24v7#rnr(cf!3p0akvgz0)lgw0$_ri5%))rim=+!g1q
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysql-testdb',
+        'NAME': 'mysql_testdb',
         'USER': 'newuser',
         'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': os.environ.get('DB_HOST'),
