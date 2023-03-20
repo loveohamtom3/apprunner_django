@@ -17,7 +17,7 @@ import urllib.parse
 
 
 def base(request):
-    return render(request, 'myapp/base.html')
+    return render(request, 'base.html')
  
 def myapp_search(request):
     # session
