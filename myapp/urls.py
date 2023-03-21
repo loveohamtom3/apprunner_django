@@ -1,5 +1,7 @@
 from django.urls import path
 from myapp import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 app_name = 'myapp'
 
@@ -13,5 +15,6 @@ urlpatterns = [
   path('user/<int:pk>/', views.UserDetailView.as_view(), name='userDetail'),
   path('user/<int:pk>/update/', views.UserUpdateView.as_view(), name='userUpdate'),
   path('like/<int:restaurant_id>/',views.like,name='like'),
-  path('consider/<int:restaurant_id>/',views.consider,name='consider')
+  path('consider/<int:restaurant_id>/',views.consider,name='consider'),
+  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
   ]
