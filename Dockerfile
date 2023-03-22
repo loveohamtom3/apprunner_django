@@ -9,4 +9,6 @@ ADD . /code/
 
 EXPOSE 8080
 
+RUN python manage.py migrate 
+
 CMD ["gunicorn", "--reload", "-b", ":8080", "portfolio.wsgi:application","-w","2","-k","gevent"]
