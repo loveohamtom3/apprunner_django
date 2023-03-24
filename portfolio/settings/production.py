@@ -23,6 +23,8 @@ DATABASES = {
     }
 }
 
-ALLOWED_HOSTS = ['169.254.175.250']
-ALLOWED_HOSTS           = ['xakezxsmjn.ap-northeast-1.awsapprunner.com']
+ALLOWED_HOSTS = [
+'169.254.175.250',
+'xakezxsmjn.ap-northeast-1.awsapprunner.com',
+]
 CSRF_TRUSTED_ORIGINS    = ['https://xakezxsmjn.ap-northeast-1.awsapprunner.com']
