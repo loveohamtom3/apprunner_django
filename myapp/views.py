@@ -172,7 +172,7 @@ class SignUp(CreateView):
             print("==========")
             login(request, user)
             if "next" in request.GET:
-             return redirect(to=request.GET["next"])
+              return redirect(to=request.GET["next"])
         else:
             next = request.GET.get('next')
 
