@@ -6,7 +6,6 @@ WORKDIR /code
 ADD requirements.txt /code/
 RUN pip install -r requirements.txt
 ADD . /code/
-COPY nginx/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 8080
 
 RUN python manage.py migrate 

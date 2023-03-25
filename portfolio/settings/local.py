@@ -9,6 +9,7 @@ SECRET_KEY = 'django-insecure-0=limiw24v7#rnr(cf!3p0akvgz0)lgw0$_ri5%))rim=+!g1q
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
