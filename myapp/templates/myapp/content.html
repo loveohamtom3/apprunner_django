@@ -23,10 +23,10 @@
             </li>
             {% else %}
             <li class="navItem">
-              <a class="navLink" href="{% url 'myapp:login' %}?next={{ request.get_full_path|urlencode  }}">ログイン</a>
+              <a class="navLink" href="{% url 'myapp:login' %}?next={{ request.get_full_path|urlencode }}">ログイン</a>
             </li>
             <li>
-              <a class="navLink" href="{% url 'myapp:signup' %}?next={{ request.get_full_path }}">新規ユーザ登録</a>
+              <a class="navLink" href="{% url 'myapp:signup' %}?next={{ request.get_full_path|urlencode }}">新規ユーザ登録</a>
             </li>
             {% endif %}
             <form method="GET" action="{% url 'myapp:search' %}">
