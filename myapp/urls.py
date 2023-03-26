@@ -16,4 +16,4 @@ urlpatterns = [
     path('user/<int:pk>/update/', views.UserUpdateView.as_view(), name='userUpdate'),
     path('like/<int:restaurant_id>/', views.like, name='like'),
     path('consider/<int:restaurant_id>/', views.consider, name='consider'),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
