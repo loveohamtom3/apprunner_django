@@ -74,34 +74,47 @@ def myapp_detail(request,Restaurant_id):
     )
     print(restaurant)
     
-    # review
-    review_list = Review.objects.all()[:10]
-    review_count = Review.objects.filter(restaurant_id=Restaurant_id).count()
-    score_ave = Review.objects.filter(restaurant_id = Restaurant_id).aggregate(Avg('score'))
+def detail(request, pk):
+    restaurant = Restaurant.objects.get(pk=pk)
+    review_count = Review.objects.filter(restaurant_id=restaurant.id).count()
+    score_ave = Review.objects.filter(restaurant_id=restaurant.id).aggregate(Avg('score'))
     average = score_ave['score__avg']
     if average:
         average_rate = average / 5 * 100
     else:
         average_rate = 0
 
-    if request.method == 'GET':        
-       review_form = ReviewForm()
-       review_list = Review.objects.filter(restaurant_id = Restaurant_id)
+    if request.method == 'GET':
+        review_form = ReviewForm()
+        try:
+            # ユーザーがすでにレビューを投稿している場合はフォームを表示しない
+            Review.objects.get(restaurant_id=restaurant.id, user=request.user)
+            review_list = Review.objects.filter(restaurant_id=restaurant.id)
+        except Review.DoesNotExist:
+            review_list = Review.objects.filter(restaurant_id=restaurant.id)
     else:
-       form = ReviewForm(data=request.POST)
-       score = request.POST['score']
-       comment = request.POST['comment']
-       
-       if form.is_valid():
-        review = Review()
-        review.restaurant_id = Restaurant_id
-        review.restaurant_name  
-        review.user = request.user
-        review.score = score
-        review.comment = comment
-        review.save()
-        return redirect(request.get_full_path())
-       return render(request, 'myapp/detail.html', {})
+        form = ReviewForm(data=request.POST)
+        if form.is_valid():
+            try:
+                # ユーザーがすでにレビューを投稿している場合は投稿しない
+                Review.objects.get(restaurant_id=restaurant.id, user=request.user)
+                review_list = Review.objects.filter(restaurant_id=restaurant.id)
+            except Review.DoesNotExist:
+                score = request.POST['score']
+                comment = request.POST['comment']
+                review = Review()
+                review.restaurant_id = restaurant.id
+                review.restaurant_name = restaurant.name
+                review.user = request.user
+                review.score = score
+                review.comment = comment
+                review.save()
+                return redirect(request.get_full_path())
+        else:
+            review_list = Review.objects.filter(restaurant_id=restaurant.id)
+        return render(request, 'myapp/detail.html', {})
+
+
     #like,consider 
     is_like = Like.objects.filter(user=request.user.id, restaurant=Restaurant_id).exists()
     is_consider = Consideration.objects.filter(user=request.user.id, restaurant=Restaurant_id).exists()
